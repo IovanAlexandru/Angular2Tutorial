@@ -14,6 +14,5 @@ export class DurationPipe implements PipeTransform {
             default:
                 return value.toString();
         }
-
     }
 }
