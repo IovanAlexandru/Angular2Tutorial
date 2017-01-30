@@ -1,3 +1,4 @@
+import { CollapsibleWellComponent } from './common/collapsible-well.component';
 import { AuthService } from './user/auth.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -42,6 +43,7 @@ import { appRoutes } from './routes';
         CreateEventComponent,
         CreateSessionComponent,
         SessionListComponent,
+        CollapsibleWellComponent,
         Error404Component
     ],
     providers: [
