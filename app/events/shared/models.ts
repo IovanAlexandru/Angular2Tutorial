@@ -1,7 +1,7 @@
 export class Event {
     id: number;
     name: string;
-    date: string;
+    date: Date;
     time: string;
     price: number;
     imageUrl: string;
