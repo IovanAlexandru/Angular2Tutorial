@@ -1,18 +1,21 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
-import { Event, Location, Session } from './models';
+import { Event, Location, Session } from './shared/models';
 
 @Component({
     selector: 'event-thumbnail',
-    templateUrl: 'app/events/event-thumbnail.component.html'
+    templateUrl: 'app/events/event-thumbnail.component.html',
+    styleUrls: ['app/events/event-thumbnail.component.css']
 })
 export class EventThumbnailComponent implements OnInit {
     @Input() event: Event;
-    @Output() eventClick = new EventEmitter();
-
     ngOnInit() { }
 
-    handleClickMe(){
-        this.eventClick.emit(this.event.name);
+    getStartTimeClass(){
+        const isEarlyStart = this.event && this.event.time === '8:00 am';;
+        return {
+            green: isEarlyStart,
+            bold: isEarlyStart
+        };
     }
 }
