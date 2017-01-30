@@ -18,6 +18,7 @@ import {
     EventService,
     EventRouteActivator,
     SessionListComponent,
+    DurationPipe,
     CreateSessionComponent
 } from './events/index';
 
@@ -37,13 +38,18 @@ import { appRoutes } from './routes';
     declarations: [
         EventsAppComponent,
         NavBarComponent,
+        // Events
         EventThumbnailComponent,
         EventsListComponent,
         EventDetailsComponent,
         CreateEventComponent,
         CreateSessionComponent,
         SessionListComponent,
+        // Common
         CollapsibleWellComponent,
+        // Pipes
+        DurationPipe,
+        // Error components
         Error404Component
     ],
     providers: [
