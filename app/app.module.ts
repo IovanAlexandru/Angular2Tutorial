@@ -2,19 +2,21 @@ import { AuthService } from './user/auth.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { Error404Component } from './errors/404.component';
 
 import { NavBarComponent } from './nav/navbar.component';
 
-import { 
-    EventThumbnailComponent, 
-    EventsListComponent, 
-    EventDetailsComponent, 
+import {
+    EventThumbnailComponent,
+    EventsListComponent,
+    EventDetailsComponent,
     CreateEventComponent,
     EventListResolver,
     EventService,
-    EventRouteActivator
+    EventRouteActivator,
+    CreateSessionComponent
 } from './events/index';
 
 import { EventsAppComponent } from './events-app.component';
@@ -26,6 +28,8 @@ import { appRoutes } from './routes';
 @NgModule({
     imports: [
         BrowserModule,
+        FormsModule,
+        ReactiveFormsModule,
         RouterModule.forRoot(appRoutes)
     ],
     declarations: [
@@ -35,6 +39,7 @@ import { appRoutes } from './routes';
         EventsListComponent,
         EventDetailsComponent,
         CreateEventComponent,
+        CreateSessionComponent,
         Error404Component
     ],
     providers: [
