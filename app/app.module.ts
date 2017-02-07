@@ -1,3 +1,4 @@
+import { EventRouteActivator } from './events/event-details/event-route-activator.service';
 import { CollapsibleWellComponent } from './common/collapsible-well.component';
 import { AuthService } from './user/auth.service';
 import { NgModule } from '@angular/core';
@@ -24,9 +25,11 @@ import {
 
 import { EventsAppComponent } from './events-app.component';
 
-import { ToastrService } from './common/toastr.service';
+import { TOASTR_TOKEN, Toastr } from './common/toastr.service';
 
 import { appRoutes } from './routes';
+
+declare let toastr: Toastr;
 
 @NgModule({
     imports: [
@@ -54,11 +57,19 @@ import { appRoutes } from './routes';
     ],
     providers: [
         EventService,
-        ToastrService,
         EventRouteActivator,
+        // equivallent with:
+        // {
+        //     provide: EventRouteActivator,
+        //     useClass: EventRouteActivator
+        // },
         {
             provide: 'canDeactivateCreateEvent',
             useValue: checkDirtyState
+        }, 
+        {
+            provide: TOASTR_TOKEN,
+            useValue: toastr
         },
         EventListResolver,
         AuthService
