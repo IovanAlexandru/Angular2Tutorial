@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class AuthService {
-    currentUser: IUser;
+    public currentUser: IUser = undefined;
 
     loginUser(userName: string, password: string) {
         this.currentUser = {

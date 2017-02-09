@@ -8,6 +8,10 @@ export class Event {
     location?: Location;
     onlineUrl?: string;
     sessions: Session[];
+
+    constructor() {
+        this.sessions = [];
+    }
 }
 
 export class Location {
@@ -24,4 +28,8 @@ export class Session {
     level: string;
     abstract: string;
     voters: string[];
+
+    constructor() {
+        this.voters = [];
+    }
 }

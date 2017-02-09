@@ -27,7 +27,10 @@ import {
     EventRouteActivator,
     SessionListComponent,
     DurationPipe,
-    CreateSessionComponent
+    CreateSessionComponent,
+    UpvoteComponent,
+    VoterService,
+    LocationValidatorDirective
 } from './events/index';
 
 import { EventsAppComponent } from './events-app.component';
@@ -61,7 +64,9 @@ declare let jQuery: any;
         // Error components
         Error404Component,
         SimpleModalComponent,
-        ModalTriggerDirective
+        ModalTriggerDirective,
+        UpvoteComponent,
+        LocationValidatorDirective
     ],
     providers: [
         EventService,
@@ -84,7 +89,8 @@ declare let jQuery: any;
             useValue: jQuery
         },
         EventListResolver,
-        AuthService
+        AuthService,
+        VoterService
     ],
     bootstrap: [EventsAppComponent]
 })

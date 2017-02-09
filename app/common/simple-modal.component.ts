@@ -35,7 +35,8 @@ export class SimpleModalComponent implements OnInit {
     ngOnInit() { }
 
     closeModal() {
-        if(this.closeOnBodyClick.toLocaleLowerCase() === "true")
-        this.$(this.containerElRef.nativeElement).modal('hide');
+        if (this.closeOnBodyClick.toLocaleLowerCase() === "true") {
+            this.$(this.containerElRef.nativeElement).modal('hide');
+        }
     }
 }
